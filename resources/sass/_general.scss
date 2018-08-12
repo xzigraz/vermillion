@@ -1,0 +1,49 @@
+body {
+	box-sizing: border-box;
+	font: {
+		family: 'Catamaran', sans-serif;
+		size: $defaultFontSize;
+		weight: 400;
+	}
+	color: $bodyColor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font: {
+		weight: 700;
+	}
+}
+
+h1 {
+	max-width: 1280px;
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	text-transform: uppercase;
+}
+
+.content-container {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-gap: 20px;
+	.content {
+		position: relative;
+		.example {
+			height: 400px;
+		}
+		.example-2 {
+			padding: {
+				right: 40px;
+			}
+		}
+		.example-3,
+		.example-4 {
+			.example-content {
+				width: 1000px;
+			}
+		}
+	}
+}
