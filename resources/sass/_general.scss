@@ -31,12 +31,17 @@ h1 {
 	grid-gap: 20px;
 	.content {
 		position: relative;
+		border: 1px solid #ccc;
 		.example {
 			height: 400px;
+			border: 1px solid #000;
+		}
+		.example-1 {
+
 		}
 		.example-2 {
-			padding: {
-				right: 40px;
+			.example-2-padding {
+				padding: 40px;
 			}
 		}
 		.example-3,

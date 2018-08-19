@@ -15,6 +15,9 @@ var CustomScrollbar = function () {
 		stepScrolling: true, //emulate step scrolling on mousedown over scrollbar
 		scrollx: 'simple', //simple, advanced, HTML or jQuery element for horizontal scrollbar
 		scrolly: 'simple', //simple, advanced, HTML or jQuery element for vertical scrollbar
+		marginAround: '0px',
+		paddingAround: '0px',
+		macStyle: false,
 		onDestroy: function () {}, //callback function when scrollbar is destroyed
 		onInit: function () {
 			var wrapperClass = 'scrollbar-inner';
@@ -28,6 +31,14 @@ var CustomScrollbar = function () {
 					break;
 			}
 			this.container.parent().addClass(wrapperClass);
+			if (this.options.marginAround !== '0px') {
+				this.container.parent().css('margin', this.options.marginAround);
+			}
+			if (this.options.macStyle === true) {
+				this.container.parent().addClass('visible-on-hover');
+			} else {
+				this.container.parent().removeClass('visible-on-hover');
+			}
 		}, //callback function when scrollbar is initialized at the first time,
 		onScroll: function () {}, //callback function when container is scrolled
 		onUpdate: function () {} //callback function before scrollbars size is calculated
@@ -69,6 +80,15 @@ var CustomScrollbar = function () {
 		}
 		if (options.scrolly !== undefined && typeof options.scrolly === 'string') {
 			this.defaultOptions.scrolly = options.scrolly;
+		}
+		if (options.marginAround !== undefined && typeof options.marginAround === 'string') {
+			this.defaultOptions.marginAround = options.marginAround;
+		}
+		if (options.paddingAround !== undefined && typeof options.paddingAround === 'string') {
+			this.defaultOptions.paddingAround = options.paddingAround;
+		}
+		if (options.macStyle !== undefined && typeof options.macStyle === 'boolean') {
+			this.defaultOptions.macStyle = options.macStyle;
 		}
 		if (options.onDestroy !== undefined && typeof options.onDestroy === 'function') {
 			this.defaultOptions.onDestroy = options.onDestroy;
