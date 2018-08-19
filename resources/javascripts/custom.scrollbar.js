@@ -16,7 +16,6 @@ var CustomScrollbar = function () {
 		scrollx: 'simple', //simple, advanced, HTML or jQuery element for horizontal scrollbar
 		scrolly: 'simple', //simple, advanced, HTML or jQuery element for vertical scrollbar
 		marginAround: '0px',
-		paddingAround: '0px',
 		macStyle: false,
 		onDestroy: function () {}, //callback function when scrollbar is destroyed
 		onInit: function () {
@@ -83,9 +82,6 @@ var CustomScrollbar = function () {
 		}
 		if (options.marginAround !== undefined && typeof options.marginAround === 'string') {
 			this.defaultOptions.marginAround = options.marginAround;
-		}
-		if (options.paddingAround !== undefined && typeof options.paddingAround === 'string') {
-			this.defaultOptions.paddingAround = options.paddingAround;
 		}
 		if (options.macStyle !== undefined && typeof options.macStyle === 'boolean') {
 			this.defaultOptions.macStyle = options.macStyle;
